@@ -41,8 +41,8 @@ public/              # Static web UI (open in a browser)
 
 ### One command (runs node, deploy, and serves the UI) (leave running)
 ```bash
-npm install
-npm run dev
+cd contracts
+npx hardhat node
 # UI: http://localhost:5174
 ```
 
