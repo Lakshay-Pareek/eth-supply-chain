@@ -1,0 +1,19 @@
+{
+  "name": "contracts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "hardhat compile",
+    "clean": "hardhat clean",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:local": "hardhat run scripts/deploy.js",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "hardhat": "^2.26.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

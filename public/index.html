@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>AgriTrace - Farm to Consumer</title>
+	<link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>AgriTrace</h1>
+		<button id="connectBtn">Connect Wallet</button>
+	</header>
+
+	<main>
+		<section id="contractSection">
+			<label>Contract Address
+				<input id="contractAddress" placeholder="0x..." />
+			</label>
+			<button id="loadContractBtn">Load</button>
+		</section>
+
+		<section>
+			<h2>Admin: Set User Role</h2>
+			<input id="roleUser" placeholder="0xUser" />
+			<select id="roleSelect">
+				<option value="1">Farmer</option>
+				<option value="2">Distributor</option>
+				<option value="3">Retailer</option>
+			</select>
+			<button id="setRoleBtn">Set Role</button>
+		</section>
+
+		<section>
+			<h2>Farmer: Create Batch</h2>
+			<input id="cid" placeholder="metadata CID or URL" />
+			<input id="origin" placeholder="Origin Farm" />
+			<input id="crop" placeholder="Crop Type" />
+			<input id="harvest" type="date" />
+			<input id="quality" type="number" placeholder="Quality 0-100" />
+			<input id="price" type="number" placeholder="Unit price (wei)" />
+			<button id="createBatchBtn">Create</button>
+			<div id="createResult"></div>
+			<canvas id="qrCanvas"></canvas>
+		</section>
+
+		<section>
+			<h2>Owner: Update Quality & Price</h2>
+			<input id="batchIdUpdate" type="number" placeholder="Batch ID" />
+			<input id="qualityUpdate" type="number" placeholder="Quality 0-100" />
+			<input id="priceUpdate" type="number" placeholder="Unit price (wei)" />
+			<button id="updateQPBtn">Update</button>
+		</section>
+
+		<section>
+			<h2>Transfer Batch</h2>
+			<input id="batchIdTransfer" type="number" placeholder="Batch ID" />
+			<input id="toAddress" placeholder="To (0x...)" />
+			<input id="note" placeholder="Note (e.g., Location)" />
+			<button id="transferBtn">Transfer</button>
+		</section>
+
+		<section>
+			<h2>Finalize to Consumer</h2>
+			<input id="batchIdFinalize" type="number" placeholder="Batch ID" />
+			<input id="finalNote" placeholder="Note" />
+			<button id="finalizeBtn">Finalize</button>
+		</section>
+
+		<section>
+			<h2>Trace by Batch ID</h2>
+			<input id="batchIdView" type="number" placeholder="Batch ID" />
+			<button id="viewBtn">View</button>
+			<pre id="batchView"></pre>
+		</section>
+	</main>
+
+	<script src="app.js"></script>
+</body>
+</html>
+
+
