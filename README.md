@@ -39,7 +39,7 @@ public/              # Static web UI (open in a browser)
 
 ## Quick Start (Local)
 
-### One command (runs node, deploy, and serves the UI)
+### One command (runs node, deploy, and serves the UI) (leave running)
 ```bash
 npm install
 npm run dev
@@ -48,32 +48,19 @@ npm run dev
 
 ### Manual steps
 
-1. Install and compile contracts
+1. 2nd Terminal
 
 ```bash
 cd contracts
-npm install
-npx hardhat compile
-```
-
-2. Start a local node (leave running)
-
-```bash
-npx hardhat node
-```
-
-3. Deploy to localhost (new terminal)
-
-```bash
 npx hardhat run scripts/deploy.js --network localhost
-# Output: ProduceRegistry deployed to: 0x...
 ```
 
-4. Open the UI
+2. 3rd Terminal
 
-- Open `public/index.html` in your browser
-- Click Connect (MetaMask)
-- Paste the deployed contract address and click Load
+```bash
+npx serve public -l 5174
+```
+
 
 ## Using the App
 
